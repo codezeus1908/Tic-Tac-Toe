@@ -1,0 +1,102 @@
+*
+{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: "Poppins";
+}
+.main-head h1
+{
+font-size:50px;
+text-align: center;
+}
+.main-head h2
+{
+    padding-top:20px;
+    font-size:30px;
+    text-align: center; 
+}
+.show-players
+{
+display:flex;
+padding-top:5rem;
+margin-left:30rem;
+}
+.show-players .player-2
+{
+padding-left:15rem;
+}
+.contain-head
+{
+    margin-left:25rem;
+    padding-top:5rem;
+}
+.contain-head .enterfirst
+{
+    height:40px;
+    width:300px;
+}
+.contain-head .entersecond
+{
+    margin-left:4rem;
+    height:40px;
+    width:300px;
+}
+.game-area
+{
+    margin-top:10rem;
+    margin-left:20rem;
+    width:60rem;
+    height:60rem;
+    border:3px solid black;
+
+}
+.game-area .block
+{
+    height:20rem;
+    width:20rem;
+    border: 1px solid black;
+
+}
+.first-row
+{
+    display: flex;
+}
+.second-row
+{
+    display: flex;
+}
+.third-row
+{
+    display: flex;
+}
+.circle
+{
+    background-image: url('images/circle1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:14rem;
+    height:14rem;
+}
+.cross
+{
+    background-image: url('images/x1.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:18rem;
+    height:18rem;
+
+}
+.restart-btn
+{
+    height:3rem;
+    width:10rem;
+    margin-top:3rem;
+    margin-left:40rem;
+    background-color: #cf352e;
+    color:white;
+    border: none;
+    border-radius:2rem;
+}

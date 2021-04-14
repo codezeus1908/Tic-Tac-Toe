@@ -19,19 +19,39 @@ var secondplayer=document.querySelector('.secondplayer');
 var firstplayer=document.querySelector('.firstplayer');
 var c,canplay=true;
 var gamearea=document.querySelector('.game-area');
-startGame();
+ var restarted=document.querySelector('.restart-btn');
 
-if(firstname.value>0)
-{
-   firstplayer.innerHTML=firstname.value;
-}
-if(secondname.value>0)
-{
-   secondplayer.innerHTML=secondname.value;
-}
+
+ function def()
+ {
+     firstplayer.textContent="Player 1";
+     secondplayer.textContent="Player 2";
+     restarted.style.display='none';
+     first.classList.remove('cross');
+     first.classList.remove('circle');
+     second.classList.remove('cross');
+     second.classList.remove('circle');
+     third.classList.remove('cross');
+     third.classList.remove('circle');
+     fourth.classList.remove('cross');
+     fourth.classList.remove('circle');
+     fifth.classList.remove('cross');
+     fifth.classList.remove('circle');
+     sixth.classList.remove('cross');
+     sixth.classList.remove('circle');
+     seventh.classList.remove('cross');
+     seventh.classList.remove('circle');
+     eighth.classList.remove('cross');
+     eighth.classList.remove('circle');
+     ninth.classList.remove('cross');
+     ninth.classList.remove('circle');
+ }
+   startGame();
+
 function startGame()
 {
    c=true;
+   restarted.style.display='none';
    if(canplay)
    {
       first.addEventListener('click',handleclick,{once:true});
@@ -80,10 +100,14 @@ function checkandrevert(curr_cell,current_class)
 }
 function checkdraw()
 {
-   if(count===9 && flg===0)
+   if((first.classList.contains('cross') || first.classList.contains('circle')) && (second.classList.contains('cross') || second.classList.contains('circle')) && (third.classList.contains('cross') || third.classList.contains('circle')) && (fourth.classList.contains('cross') || fourth.classList.contains('circle')) && (fifth.classList.contains('cross') || fifth.classList.contains('circle')) && (sixth.classList.contains('cross') || sixth.classList.contains('circle')) && (seventh.classList.contains('cross') || seventh.classList.contains('circle')) && (eighth.classList.contains('cross') || eighth.classList.contains('circle')) && (ninth.classList.contains('cross') || ninth.classList.contains('circle')))
    {
-       console.log('Its a draw')
+      firstplayer.innerText='DRAW!!!';
+      secondplayer.innerText='DRAW!!!';
+      restarted.style.display='block';
+      canplay=false;
    }
+
 }
 
 function checkwin()
@@ -93,7 +117,7 @@ function checkwin()
      {
         flg=1;
         secondplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
         
      }
@@ -101,7 +125,7 @@ function checkwin()
      {
         flg=1;
         secondplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
      }
 
@@ -110,7 +134,8 @@ function checkwin()
      {
         flg=1;
         secondplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
+        
          canplay=false;
      }
 
@@ -118,7 +143,7 @@ function checkwin()
      {
         flg=1;
         secondplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
      }
 
@@ -126,35 +151,35 @@ function checkwin()
      {
         flg=1;
         secondplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
      }
      if(first.classList.contains('cross') &&  fourth.classList.contains('cross') && seventh.classList.contains('cross'))
      {
         flg=1;
         secondplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
      }
      if(second.classList.contains('cross') &&  fifth.classList.contains('cross') && eighth.classList.contains('cross'))
      {
         flg=1;
         secondplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
      }
      if(third.classList.contains('cross') &&  sixth.classList.contains('cross') && ninth.classList.contains('cross'))
      {
         flg=1;
         secondplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
      }
      if(first.classList.contains('circle') &&  second.classList.contains('circle') && third.classList.contains('circle'))
      {
         flg=1;
         firstplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
          
      }
@@ -164,7 +189,7 @@ function checkwin()
      {
         flg=1;
         firstplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
         
      }
@@ -174,7 +199,7 @@ function checkwin()
      {
         flg=1;
         firstplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
          
      }
@@ -183,7 +208,7 @@ function checkwin()
      {
         flg=1;
         firstplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
         
      }
@@ -192,7 +217,7 @@ function checkwin()
      {
         flg=1;
         firstplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
         
      }
@@ -200,27 +225,27 @@ function checkwin()
      {
         flg=1;
         firstplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
      }
      if(second.classList.contains('circle') &&  fifth.classList.contains('circle') && eighth.classList.contains('circle'))
      {
         flg=1;
         firstplayer.innerText+=' WINNER!!';
-        gamearea.style.display='none';
+        restarted.style.display='block';
         canplay=false;
      }
      if(third.classList.contains('circle') &&  sixth.classList.contains('circle') && ninth.classList.contains('circle'))
      {
          flg=1;
          firstplayer.innerText+=' WINNER!!';
-         gamearea.style.display='none';
+         restarted.style.display='block';
         canplay=false;
      }
      
 }
 
-
+restarted.addEventListener('click',def);
 
 
 
